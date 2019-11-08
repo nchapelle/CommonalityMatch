@@ -32,7 +32,7 @@ module.exports = function(app) {
 
   app.post("/api/friends", function(req, res) {
     // req.body is available since we're using the body parsing middleware
-      friends.push(req.body); 
+      
         // default friend match is the first friend but result will be whoever has the minimum difference in scores
   var user = req.body
   var bestFriendIndex = 0;
@@ -51,10 +51,11 @@ module.exports = function(app) {
       minimumDifference = totalDifference;
     }
   }
-  // after finding match, add user to friend array
-  friends.push(user);
   // send back to browser the best friend match
   res.json(friends[bestFriendIndex]);
+  // after finding match, add user to friend array
+  friends.push(user);
+
 
   });
 
