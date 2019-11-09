@@ -52,9 +52,10 @@ module.exports = function(app) {
     }
   }
   // send back to browser the best friend match
-  res.json(friends[bestFriendIndex]);
-  // after finding match, add user to friend array
   friends.push(user);
+  // after finding match, add user to friend array  
+  res.json(friends[bestFriendIndex]);
+
 
 
   });
